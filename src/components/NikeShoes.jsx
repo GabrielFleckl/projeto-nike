@@ -19,9 +19,9 @@ export function Model(props) {
 
   const scroll = useScroll();
 
-  // useFrame(() => {
-  //   tl.current.seek(scroll.offset * tl.current.duration())
-  // })
+  useFrame(() => {
+    tl.current.seek(scroll.offset * tl.current.duration())
+  })
 
   useLayoutEffect(() => {
     tl.current = gsap.timeline();
