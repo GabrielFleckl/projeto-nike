@@ -28,7 +28,7 @@ function Expo() {
           rotation={[0, 0, 0]}
           polar={[0, 0]}
           speed={3}
-          enabled={false}
+          enabled={true}
         >
           <Model />
         </PresentationControls>
@@ -37,7 +37,7 @@ function Expo() {
         </Scroll>
       </ScrollControls>
 
-      <Environment background preset="sunset" blur={1} resolution={256} />
+      <Environment preset="sunset" blur={1} resolution={256} />
       <PerspectiveCamera makeDefault position={[0, -0.2, 1]} />
     </>
   );

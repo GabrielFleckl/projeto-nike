@@ -35,7 +35,7 @@ export function Model(props) {
     gsap.from(model.current.position, {
       y: 10,
       duration: 2,
-      ease: "elastic.out(0.4,0.75)",
+      ease: "elastic.out(0.3,0.75)",
     })
 
 
