@@ -35,17 +35,23 @@ export function Model(props) {
     gsap.from(model.current.position, {
       y: 10,
       duration: 2,
-      ease: "elastic.out(0.3,0.75)",
-    })
+      ease: "elastic.out(0.4,0.75)",
+    });
 
+    gsap.to(model.current.rotation, {
+      y: -Math.PI * 2.3,
+      duration: 3,
+      delay: 1,
+      ease: "elastic.out(1,0.75)",
+    });
 
     tl.current = gsap.timeline({
-      defaults: { duration: 4, ease: "expo.inOut" },
+      defaults: { duration: 4, ease: "power1" },
     });
 
     tl.current
       // .to(model.current.rotation, { y: -1 }, 2)
-      .to(model.current.position, { x: .5 }, 2)
+      .to(model.current.position, { x: 0.5 }, 2)
 
       .to(model.current.rotation, { y: -Math.PI / 2 }, 6)
       .to(model.current.position, { x: -0.5 }, 6)
@@ -70,7 +76,7 @@ export function Model(props) {
   return (
     <group
       ref={model}
-      position={[0, -0.2, 0]}
+      position={[0, -0.185, 0]}
       rotation={[0, -Math.PI / 2.5, 0]}
     >
       <group ref={float} {...props} dispose={null}>

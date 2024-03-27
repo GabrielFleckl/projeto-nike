@@ -21,19 +21,21 @@ function Expo() {
         blur={1}
       />
 
-      <ScrollControls pages={6} damping={1}>
+      <ScrollControls pages={4} damping={0.75}>
         <PresentationControls
           global
           config={{ mass: 1, tension: 50 }}
           rotation={[0, 0, 0]}
           polar={[0, 0]}
           speed={3}
-          enabled={true}
+          enabled={false}
         >
           <Model />
         </PresentationControls>
         <Scroll html>
+        <div className="w-screen">
           
+        </div>
         </Scroll>
       </ScrollControls>
 
