@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export default function Navbar() {
   return (
     <div className="fixed w-full z-10 text-slate-50">
-      <div className="navbar w-3/4 m-auto mt-4 rounded-lg transition md:px-8 bg-slate-600 bg-opacity-20 backdrop-blur-md shadow-lg delay-100 ease-in">
+      <div className="navbar w-3/4 m-auto mt-4 rounded-lg transition md:px-8 bg-slate-600 bg-opacity-20 backdrop-blur-md shadow-lg">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

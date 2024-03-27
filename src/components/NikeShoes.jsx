@@ -51,26 +51,14 @@ export function Model(props) {
 
     tl.current
       // .to(model.current.rotation, { y: -1 }, 2)
-      .to(model.current.position, { x: 0.5 }, 2)
+      .to(model.current.position, { x: 0.5, ease: "elastic.out(1,0.75)" }, 1)
 
-      .to(model.current.rotation, { y: -Math.PI / 2 }, 6)
-      .to(model.current.position, { x: -0.5 }, 6)
+      .to(model.current.rotation, { y: -Math.PI / 2 }, 5)
+      .to(model.current.position, { x: -0.5, ease: "elastic.out(1,0.75)" }, 5)
 
-      .to(model.current.rotation, { y: Math.PI / 2.5 }, 11)
+      .to(model.current.rotation, { y: Math.PI / 4.1 }, 9)
       // .to(model.current.rotation, { x: 1 }, 11)
-      .to(model.current.position, { x: 0 }, 11)
-
-      // .to(model.current.rotation, { y: 0 }, 13)
-      // .to(model.current.rotation, { x: -1 }, 13)
-      .to(model.current.position, { x: 0 }, 13)
-
-      // .to(model.current.rotation, { y: 0 }, 16)
-      // .to(model.current.rotation, { x: 0 }, 16)
-      .to(model.current.position, { x: 0 }, 16)
-
-      // .to(model.current.rotation, { y: 0 }, 20)
-      // .to(model.current.rotation, { x: 0 }, 20)
-      .to(model.current.position, { y: 10 }, 20);
+      .to(model.current.position, { x: 0.45, ease: "elastic.out(1,0.75)" }, 9);
   });
 
   return (

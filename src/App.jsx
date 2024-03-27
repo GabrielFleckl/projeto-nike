@@ -1,10 +1,11 @@
 import { Suspense, useLayoutEffect, useRef } from "react";
 import Expo from "./components/Expo";
 import { Canvas } from "@react-three/fiber";
-import { StatsGl, Loader } from "@react-three/drei";
+import { Loader } from "@react-three/drei";
 import Navbar from "./components/Navbar";
 
 import { gsap } from "gsap";
+import Footer from "./components/Footer";
 
 function App() {
   const nike = useRef();
@@ -15,11 +16,9 @@ function App() {
       {
         opacity: 0,
       },
-      { duration: 4, opacity: 0.3, ease: "power1", delay: 2}
+      { duration: 4, opacity: 0.3, ease: "power1", delay: 2 }
     );
-  })
-
-  console.log(nike.current);
+  });
 
   return (
     <div className="h-screen w-full bg-gradient-to-br relative from-[#BCC5CE] to-[#929EAD]">
@@ -39,6 +38,8 @@ function App() {
         </Suspense>
       </Canvas>
       <Loader />
+
+      <Footer />
     </div>
   );
 }

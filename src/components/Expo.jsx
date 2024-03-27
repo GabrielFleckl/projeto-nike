@@ -4,10 +4,10 @@ import {
   PresentationControls,
   ContactShadows,
   ScrollControls,
-  Scroll,
 } from "@react-three/drei";
 
 import { Model } from "./NikeShoes";
+import Overlay from "./Overlay";
 
 function Expo() {
   return (
@@ -21,26 +21,24 @@ function Expo() {
         blur={1}
       />
 
-      <ScrollControls pages={4} damping={0.75}>
+      <ScrollControls pages={4} damping={0.7}>
         <PresentationControls
           global
           config={{ mass: 1, tension: 50 }}
           rotation={[0, 0, 0]}
           polar={[0, 0]}
           speed={3}
-          enabled={false}
+          enabled={true}
+          azimuth={[-Infinity, Infinity]}
+          snap
         >
           <Model />
         </PresentationControls>
-        <Scroll html>
-        <div className="w-screen">
-          
-        </div>
-        </Scroll>
+        <Overlay />
       </ScrollControls>
 
       <Environment preset="sunset" blur={1} resolution={256} />
-      <PerspectiveCamera makeDefault position={[0, -0.2, 1]} />
+      <PerspectiveCamera makeDefault position={[0, -0.2, 1]} fov={45} />
     </>
   );
 }
