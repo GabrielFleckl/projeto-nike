@@ -1,10 +1,10 @@
 import {
-  OrbitControls,
   PerspectiveCamera,
   Environment,
   PresentationControls,
   ContactShadows,
   ScrollControls,
+  Scroll,
 } from "@react-three/drei";
 
 import { Model } from "./NikeShoes";
@@ -21,16 +21,20 @@ function Expo() {
         blur={1}
       />
 
-      <ScrollControls>
+      <ScrollControls pages={6} damping={1}>
         <PresentationControls
           global
           config={{ mass: 1, tension: 50 }}
           rotation={[0, 0, 0]}
           polar={[0, 0]}
           speed={3}
+          enabled={false}
         >
           <Model />
         </PresentationControls>
+        <Scroll html>
+          
+        </Scroll>
       </ScrollControls>
 
       <Environment background preset="sunset" blur={1} resolution={256} />

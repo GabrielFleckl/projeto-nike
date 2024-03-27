@@ -15,27 +15,10 @@ export function Model(props) {
   const { nodes, materials } = useGLTF("models/nike_tc_7900_sail.glb");
   const float = useRef();
   const model = useRef();
+  const scroll = useScroll();
   const tl = useRef();
 
-  const scroll = useScroll();
-
-  useFrame(() => {
-    tl.current.seek(scroll.offset * tl.current.duration())
-  })
-
-  useLayoutEffect(() => {
-    tl.current = gsap.timeline();
-
-
-    tl.current.from(model.current.position, {
-      y: 10,
-      duration: 3,
-      ease: "back.out(0.3)",
-    })
-    
-  });
-
-  useFrame((state) => {
+  useFrame((state, delta) => {
     const t = state.clock.getElapsedTime();
 
     float.current.rotation.set(
@@ -44,8 +27,46 @@ export function Model(props) {
       -0.2 - (1 + Math.sin(t / 1.5)) / 20
     );
     float.current.position.y = (1 + Math.sin(t / 1.5)) / 30;
-    
+
+    tl.current.seek(scroll.offset * tl.current.duration());
   });
+
+  useLayoutEffect(() => {
+    gsap.from(model.current.position, {
+      y: 10,
+      duration: 2,
+      ease: "elastic.out(0.4,0.75)",
+    })
+
+
+    tl.current = gsap.timeline({
+      defaults: { duration: 4, ease: "expo.inOut" },
+    });
+
+    tl.current
+      // .to(model.current.rotation, { y: -1 }, 2)
+      .to(model.current.position, { x: .5 }, 2)
+
+      .to(model.current.rotation, { y: -Math.PI / 2 }, 6)
+      .to(model.current.position, { x: -0.5 }, 6)
+
+      .to(model.current.rotation, { y: Math.PI / 2.5 }, 11)
+      // .to(model.current.rotation, { x: 1 }, 11)
+      .to(model.current.position, { x: 0 }, 11)
+
+      // .to(model.current.rotation, { y: 0 }, 13)
+      // .to(model.current.rotation, { x: -1 }, 13)
+      .to(model.current.position, { x: 0 }, 13)
+
+      // .to(model.current.rotation, { y: 0 }, 16)
+      // .to(model.current.rotation, { x: 0 }, 16)
+      .to(model.current.position, { x: 0 }, 16)
+
+      // .to(model.current.rotation, { y: 0 }, 20)
+      // .to(model.current.rotation, { x: 0 }, 20)
+      .to(model.current.position, { y: 10 }, 20);
+  });
+
   return (
     <group
       ref={model}
