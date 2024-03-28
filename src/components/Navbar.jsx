@@ -30,7 +30,7 @@ export default function Navbar() {
                 <a>New & Featured</a>
               </li>
               <li>
-                <a>Browse Games</a>
+                <a>Categories</a>
                 <ul className="p-2">
                   <li>
                     <a>Submenu 1</a>
@@ -41,14 +41,14 @@ export default function Navbar() {
                 </ul>
               </li>
               <li>
-                <a>Store</a>
+                <a>New Releases</a>
               </li>
               <li>
                 <div className="gap-1">
-                  <button className="btn border-none text-slate-50">
+                  <button className="btn bg-slate-600 bg-opacity-20 backdrop-blur-md border-none text-slate-50">
                     Sign up
                   </button>
-                  <button className="btn">Login</button>
+                  <button className="btn bg-slate-600 bg-opacity-20 backdrop-blur-md border-none text-slate-50">Login</button>
                 </div>
               </li>
             </ul>

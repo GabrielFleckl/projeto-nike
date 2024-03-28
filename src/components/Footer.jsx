@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="footer absolute bottom-0 items-center py-0 px-4 text-neutral-content bg-slate-600 bg-opacity-30 backdrop-blur-md">
+    <footer className="footer gap-0 md:gap-10 absolute bottom-0 items-center py-0 px-4 text-neutral-content bg-slate-600 bg-opacity-30 backdrop-blur-md">
       <aside className="items-center grid-flow-col">
         <svg viewBox="0 0 24 24" width="60px" height="60px">
           <path

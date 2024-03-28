@@ -10,6 +10,9 @@ import { Model } from "./NikeShoes";
 import Overlay from "./Overlay";
 
 function Expo() {
+
+  const mobile = window.innerWidth < 500
+
   return (
     <>
       <ambientLight intensity={0.1} />
@@ -21,7 +24,7 @@ function Expo() {
         blur={1}
       />
 
-      <ScrollControls pages={4} damping={0.7}>
+      <ScrollControls pages={mobile ? 3.2 : 4} damping={0.7}>
         <PresentationControls
           global
           config={{ mass: 1, tension: 50 }}
@@ -35,10 +38,11 @@ function Expo() {
           <Model />
         </PresentationControls>
         <Overlay />
+        
       </ScrollControls>
 
       <Environment preset="sunset" blur={1} resolution={256} />
-      <PerspectiveCamera makeDefault position={[0, -0.2, 1]} fov={45} />
+      <PerspectiveCamera makeDefault position={[-0.050, -0.2, 1]} fov={mobile ? 65 : 45} />
     </>
   );
 }

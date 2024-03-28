@@ -1,15 +1,17 @@
-import { Scroll, useScroll } from "@react-three/drei";
+import { Scroll } from "@react-three/drei";
+import Footer from "./Footer";
+
 
 const Section = (props) => {
   return (
     <section
-      className={`h-screen flex flex-col justify-center p-10 ${
+      className={`md:h-screen rounded-xl flex flex-col justify-center md:p-10 bg-slate-500 bg-opacity-20 backdrop-blur-md md:bg-transparent md:bg-opacity-100 md:backdrop-blur-none ${
         props.right ? "items-end" : "items-start"
       }`}
     >
-      <div className="w-1/2 flex items-center justify-center">
-        <div className="max-w-xlg w-full">
-          <div className="text-slate-100 rounded-xl px-8 py-10 bg-slate-500 bg-opacity-20 backdrop-blur-md shadow-lg">
+      <div className="md:w-1/2 flex items-center md:gap-5 justify-center">
+        <div className="md:max-w-xlg md:w-full">
+          <div className="text-slate-100 rounded-xl px-8 py-10 md:bg-slate-500 md:bg-opacity-20 md:backdrop-blur-md md:shadow-lg">
             {props.children}
           </div>
         </div>
@@ -19,6 +21,9 @@ const Section = (props) => {
 };
 
 function Overlay() {
+
+  const mobile = window.innerWidth > 500
+
   return (
     <Scroll html>
       <div class="w-screen absolute top-[100vh]">
@@ -61,7 +66,7 @@ function Overlay() {
             What Athletes Are Saying:{" "}
             <span className="text-primary">Real Testimonials</span>
           </h1>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 mb-10 md:mb-0">
             <p className="mt-5 font-semibold text-justify">
               "The Nike TC 7900 has completely changed my running experience.
               Its cushioning technology is simply amazing, and I feel like I'm
@@ -86,8 +91,15 @@ function Overlay() {
               .
             </p>
           </div>
+          
         </Section>
+        {/* <Footer />  */}
+
+        {
+          mobile && <Footer />
+        }
       </div>
+      
     </Scroll>
   );
 }

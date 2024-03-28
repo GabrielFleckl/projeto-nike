@@ -18,7 +18,7 @@ export function Model(props) {
   const scroll = useScroll();
   const tl = useRef();
 
-  useFrame((state, delta) => {
+  useFrame((state) => {
     const t = state.clock.getElapsedTime();
 
     float.current.rotation.set(

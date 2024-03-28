@@ -5,10 +5,10 @@ import { Loader } from "@react-three/drei";
 import Navbar from "./components/Navbar";
 
 import { gsap } from "gsap";
-import Footer from "./components/Footer";
 
 function App() {
   const nike = useRef();
+  const mobile = window.innerWidth < 500;
 
   useLayoutEffect(() => {
     gsap.fromTo(
@@ -16,7 +16,7 @@ function App() {
       {
         opacity: 0,
       },
-      { duration: 4, opacity: 0.3, ease: "power1", delay: 2 }
+      { duration: 4, opacity: 0.3, ease: "power1", delay: 3 }
     );
   });
 
@@ -26,7 +26,11 @@ function App() {
 
       <p
         ref={nike}
-        className="text-slate-500 ml-20 absolute inset-0 grid place-items-center  text-[20em] tracking-[0.30em] antialiased"
+        className={`${
+          mobile
+            ? "text-slate-500 absolute inset-0 flex place-items-center mb-20 rotate-90 text-[10em] tracking-[0.35em] antialiased"
+            : "text-slate-500 ml-20 absolute inset-0 grid place-items-center text-[20em] tracking-[0.30em] antialiased"
+        }`}
       >
         NIKE
       </p>
@@ -38,8 +42,6 @@ function App() {
         </Suspense>
       </Canvas>
       <Loader />
-
-      <Footer />
     </div>
   );
 }
