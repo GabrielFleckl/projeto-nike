@@ -22,7 +22,7 @@ function App() {
   });
 
   return (
-    <div className="h-screen w-screen flex justify-center bg-gradient-to-br relative from-[#BCC5CE] to-[#929EAD]">
+    <div className="h-screen w-screen flex overflow-hidden touch-none md:touch-auto justify-center bg-gradient-to-br relative from-[#BCC5CE] to-[#929EAD]">
       <Navbar />
 
       <p
