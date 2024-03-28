@@ -8,7 +8,8 @@ import { gsap } from "gsap";
 
 function App() {
   const nike = useRef();
-  const mobile = window.innerWidth < 500;
+  // const mobile = window.innerWidth < 500;
+  const mobile = Math.min(window.screen.width, window.screen.height) < 768 || navigator.userAgent.indexOf("Mobi") > -1;
 
   useLayoutEffect(() => {
     gsap.fromTo(

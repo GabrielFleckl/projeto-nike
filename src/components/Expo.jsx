@@ -11,7 +11,11 @@ import Overlay from "./Overlay";
 
 function Expo() {
 
-  const mobile = window.innerWidth < 500
+  // const mobile = window.innerWidth < 500
+
+  const mobile = Math.min(window.screen.width, window.screen.height) < 768 || navigator.userAgent.indexOf("Mobi") > -1;
+
+
 
   return (
     <>
