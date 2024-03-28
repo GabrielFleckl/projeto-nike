@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="h-screen w-screen bg-gradient-to-br relative from-[#BCC5CE] to-[#929EAD]">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <p
         ref={nike}
