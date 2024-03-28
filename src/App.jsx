@@ -21,7 +21,7 @@ function App() {
   });
 
   return (
-    <div className="h-screen w-full bg-gradient-to-br relative from-[#BCC5CE] to-[#929EAD]">
+    <div className="h-screen w-screen bg-gradient-to-br relative from-[#BCC5CE] to-[#929EAD]">
       <Navbar />
 
       <p
@@ -35,7 +35,7 @@ function App() {
         NIKE
       </p>
 
-      <Canvas>
+      <Canvas >
         <Suspense fallback={null}>
           {/* <StatsGl /> */}
           <Expo />
