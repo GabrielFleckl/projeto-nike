@@ -1,5 +1,4 @@
 import { useProgress } from "@react-three/drei";
-import NikeLogo from "../assets/logo_nike.svg";
 
 import { gsap } from "gsap";
 import { useRef } from "react";
@@ -16,7 +15,7 @@ function NikeLoader() {
     repeat: -1,
     yoyo: true,
     ease: "power1.inOut",
-    delay:5
+    delay:2
   });
 
   gsap.to(nikeLogoContainer.current, {
@@ -49,7 +48,7 @@ function NikeLoader() {
                 attributeName="width"
                 from="0%"
                 to="100%"
-                dur="5s"
+                dur="2s"
                 fill="black"
               />
             </rect>
