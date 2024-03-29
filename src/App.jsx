@@ -18,7 +18,7 @@ function App() {
       {
         opacity: 0,
       },
-      { duration: 4, opacity: 0.3, ease: "power1", delay: 3 }
+      { duration: 4, opacity: 0.3, ease: "power1", delay: 8 }
     );
   });
 

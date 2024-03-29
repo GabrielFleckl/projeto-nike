@@ -36,12 +36,13 @@ export function Model(props) {
       y: 10,
       duration: 2,
       ease: "elastic.out(0.4,0.75)",
+      delay: 5
     });
 
     gsap.to(model.current.rotation, {
       y: -Math.PI * 2.3,
       duration: 3,
-      delay: 1,
+      delay: 6,
       ease: "elastic.out(1,0.75)",
     });
 
