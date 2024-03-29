@@ -22,7 +22,7 @@ const Section = (props) => {
 
 function Overlay() {
 
-  const mobile = Math.min(window.screen.width, window.screen.height) < 768 || navigator.userAgent.indexOf("Mobi") > -1;
+  const mobile = window.innerWidth > 500
 
   return (
     <Scroll html>
