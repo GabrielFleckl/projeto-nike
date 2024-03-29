@@ -10,11 +10,9 @@ import { Model } from "./NikeShoes";
 import Overlay from "./Overlay";
 
 function Expo() {
-
-  // const mobile = window.innerWidth < 500
-
-  const mobile = Math.min(window.screen.width, window.screen.height) < 768 || navigator.userAgent.indexOf("Mobi") > -1;
-
+  const mobile =
+    Math.min(window.screen.width, window.screen.height) < 768 ||
+    navigator.userAgent.indexOf("Mobi") > -1;
 
   return (
     <>
@@ -41,11 +39,14 @@ function Expo() {
           <Model />
         </PresentationControls>
         <Overlay />
-        
       </ScrollControls>
 
       <Environment preset="sunset" blur={1} resolution={256} />
-      <PerspectiveCamera makeDefault position={[-0.050, -0.2, 1]} fov={mobile ? 65 : 45} />
+      <PerspectiveCamera
+        makeDefault
+        position={[-0.05, -0.2, 1]}
+        fov={mobile ? 65 : 45}
+      />
     </>
   );
 }

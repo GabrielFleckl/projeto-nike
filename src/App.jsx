@@ -1,14 +1,15 @@
 import { Suspense, useLayoutEffect, useRef } from "react";
-import Expo from "./components/Expo";
 import { Canvas } from "@react-three/fiber";
-import { Loader } from "@react-three/drei";
-import Navbar from "./components/Navbar";
-
 import { gsap } from "gsap";
+
+import Navbar from "./components/Navbar";
+import Expo from "./components/Expo";
+import NikeLoader from "./components/NikeLoader"
+
 
 function App() {
   const nike = useRef();
-  // const mobile = window.innerWidth < 500;
+  
   const mobile = Math.min(window.screen.width, window.screen.height) < 768 || navigator.userAgent.indexOf("Mobi") > -1;
 
   useLayoutEffect(() => {
@@ -42,7 +43,8 @@ function App() {
           <Expo />
         </Suspense>
       </Canvas>
-      <Loader />
+      {/* <Loader /> */}
+      <NikeLoader/>
     </div>
   );
 }
