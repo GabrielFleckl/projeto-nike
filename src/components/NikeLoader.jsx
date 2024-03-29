@@ -20,7 +20,7 @@ function NikeLoader() {
   return (
     <div
       className={`${
-        active ? "" : "opacity-0 pointer-events-none"
+        active ? "" : "opacity-0 pointer-events-none hidden overflow-hidden"
       } absolute bg-[#8F9BAB] w-screen z-20 grid place-items-center `}
     >
       <img ref={nikeLogo} className="w-96 h-screen" src={NikeLogo} alt="" />
