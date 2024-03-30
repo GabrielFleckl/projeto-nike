@@ -4,13 +4,14 @@ import { gsap } from "gsap";
 
 import Navbar from "./components/Navbar";
 import Expo from "./components/Expo";
-import NikeLoader from "./components/NikeLoader"
-
+import NikeLoader from "./components/NikeLoader";
 
 function App() {
   const nike = useRef();
-  
-  const mobile = Math.min(window.screen.width, window.screen.height) < 768 || navigator.userAgent.indexOf("Mobi") > -1;
+
+  const mobile =
+    Math.min(window.screen.width, window.screen.height) < 768 ||
+    navigator.userAgent.indexOf("Mobi") > -1;
 
   useLayoutEffect(() => {
     gsap.fromTo(
@@ -37,14 +38,13 @@ function App() {
         NIKE
       </p>
 
-      <Canvas >
+      <Canvas>
         <Suspense fallback={null}>
-          {/* <StatsGl /> */}
           <Expo />
         </Suspense>
       </Canvas>
-      {/* <Loader /> */}
-      <NikeLoader/>
+
+      <NikeLoader />
     </div>
   );
 }
