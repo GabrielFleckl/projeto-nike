@@ -1,7 +1,6 @@
 import { Scroll } from "@react-three/drei";
 import Footer from "./Footer";
 
-
 const Section = (props) => {
   return (
     <section
@@ -21,14 +20,13 @@ const Section = (props) => {
 };
 
 function Overlay() {
-
-  const mobile = window.innerWidth > 500
+  const mobile = window.innerWidth > 500;
 
   return (
     <Scroll html>
       <div class="w-screen absolute top-[100vh]">
         <Section>
-          <h1 className="font-semibold text-2xl text-slate-200">
+          <h1 className="font-semibold text-2xl text-primary">
             Discover the Power of Innovation: Nike TC 7900
           </h1>
 
@@ -48,7 +46,7 @@ function Overlay() {
         </Section>
 
         <Section right>
-          <h1 className="text-2xl font-semibold text-slate-200">
+          <h1 className="text-2xl text-primary font-semibold">
             Features and Technology
           </h1>
           <p className="mt-5 font-semibold text-justify">
@@ -91,28 +89,11 @@ function Overlay() {
               .
             </p>
           </div>
-          
         </Section>
-        {/* <Footer />  */}
-
-        {
-          mobile && <Footer />
-        }
+        {mobile && <Footer />}
       </div>
-      
     </Scroll>
   );
 }
 
 export default Overlay;
-
-// const scroll = useScroll();
-// const [opacityFirstSection, setOpacityFirstSection] = useState(1);
-// const [opacitySecondSection, setOpacitySecondSection] = useState(1);
-// const [opacityLastSection, setOpacityLastSection] = useState(1);
-
-// useFrame(() => {
-//   setOpacityFirstSection(1 - scroll.range(0, 1 / 3));
-//   setOpacitySecondSection(scroll.curve(1 / 3, 1 / 3));
-//   setOpacityLastSection(scroll.range(2 / 3, 1 / 3));
-// });
